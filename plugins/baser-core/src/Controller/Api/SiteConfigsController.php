@@ -91,7 +91,7 @@ class SiteConfigsController extends BcApiController
         try {
             $service->sendTestMail(
                 $this->getRequest()->getData(),
-                $siteConfigs['email'],
+                $siteConfigs['email'] ?? null,
                 __d('baser_core', 'メール送信テスト'),
                 __d('baser_core', "メール送信テストです。") . "\n" . $siteUrl
             );
